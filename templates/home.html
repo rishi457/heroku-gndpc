@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mobile Price Prediction</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	body{
+  		background: url('https://img.freepik.com/free-vector/digital-mobile-smartphone-technology-background-with-circuit-diagram_1017-21004.jpg?size=626&ext=jpg');
+  		background-size: 100%;
+  		background-attachment: fixed;
+  		background-position: center;
+  	}
+  	.box{
+  		background: rgb(1, 1, 1, .5);
+  		margin-top: 100px;
+  		padding: 20px;
+  		border-radius: 10px;
+  	}
+  	h1{
+  		padding: 10px;
+  	}
+  	.box h1,.box label{
+  		color: white;
+  	}
+  	label{
+  		font-size: 18px;
+  	}
+  </style>
+</head>
+<body>
+
+
+<form action="http://127.0.0.1:5000/prediction"  method="post" class="col-lg-8 col-lg-offset-4 box">
+	<h1 class="text-center">Mobile Price Prediction</h1>
+	<div class="form-group col-lg-4">
+		<label>Battery Power</label>
+		<input type="number" min="0" name="battery_power" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Bluetooth</label>
+		<select name="blue" class="form-control">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Clock Speed</label>
+		<input type="number" step="0.00001" min="0" name="clock_speed" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Dual Sim</label>
+		<select name="dual_sim" class="form-control">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Front Camera</label>
+		<input type="number" min="0" name="fc" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Network</label>
+		<select name="network" class="form-control">
+			<option value='3G'>3G</option>
+			<option value='4G'>4G</option>
+		</select>
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Internal Memory</label>
+		<input type="number" min="0" name="int_memory" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Mobile Depth</label>
+		<input type="number" min="0" name="m_dep" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Mobile weight</label>
+		<input type="number" min="0" name="mobile_wt" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>No of Cores</label>
+		<input type="number" min="0" name="n_cores" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Processor</label>
+		<input type="number" min="0" name="pc" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Pixel height</label>
+		<input type="number" min="0" name="pixel_height" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Pixel width</label>
+		<input type="number" min="0" name="pixel_width" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Ram</label>
+		<input type="number" min="0" name="ram" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Screen height</label>
+		<input type="number" min="0" name="sc_h" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Screen width</label>
+		<input type="number" min="0" name="sc_w" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>talk Time</label>
+		<input type="number" min="0" name="talk_time" class="form-control">
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Touch Screen</label>
+		<select name="touch_screen" class="form-control">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	</div>
+	<div class="form-group col-lg-4">
+		<label>Wifi</label>
+		<select name="wifi" class="form-control">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	</div>
+	<div class="form-group col-lg-12">
+		<input type="submit" name="submit" class="btn btn-info">
+		<input type="reset" name="reset" class="btn btn-danger">
+	</div>
+	<div class = "form-group col-lg-12">
+		<h1><b><i>prediction: {{output}}</i></b></h1>
+	</div>
+</form>
+
+
+
+
+</body>
+</html>''
